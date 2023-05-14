@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package="tokenmngr/proto";
+
+message Token {
+  string id = 1;
+  string name = 2;
+  uint64 low = 3;
+  uint64 mid = 4;
+  uint64 high = 5;
+  uint64 partial = 6;
+  uint64 final = 7;
+}
+
+service TokenManager {
+  rpc Create(CreateRequest) returns (CreateResponse) {}
+  rpc Drop(DropRequest) returns (DropResponse) {}
+  rpc Write(WriteRequest) returns (WriteResponse) {}
+  rpc Read(ReadRequest) returns (ReadResponse) {}
+}
+
+message CreateRequest {
+  string id = 1;
+}
+
+message CreateResponse {
+  bool success = 1;
+}
+
+message DropRequest {
+  string id = 1;
+}
+
+message DropResponse {
+  bool success = 1;
+}
+
+message WriteRequest {
+  string id = 1;
+  string name = 2;
+  uint64 low = 3;
+  uint64 mid = 4;
+  uint64 high = 5;
+}
+
+message WriteResponse {
+  uint64 partial = 1;
+}
+
+message ReadRequest {
+  string id = 1;
+}
+
+message ReadResponse {
+  uint64 final = 1;
+}
