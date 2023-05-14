@@ -1,0 +1,17 @@
+Script started on Tue Apr  4 23:46:25 2023
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004hggo run client.go -[7m-create -id 1[7m2[7m34 -host localhost -port 50051[27m[K[A[36C[27m-[27mc[27mr[27me[27ma[27mt[27me[27m [27m-[27mi[27md[27m [27m12[27m3[27m4[27m [27m-[27mh[27mo[27ms[27mt[27m [27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[27m [27m-[27mp[27mo[27mr[27mt[27m [27m5[27m0[27m0[27m5[27m1[?2004l
+2023/04/04 23:46:54 true
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004hggo run client.go -[7mwrite -id 123[7m4[7m -name abc -low 0 -mid 10 -high 100 -host localhost -port 50051[27m[K[A[3C[27mw[27mr[27mi[27mt[27me[27m [27m-[27mi[27md[27m [27m1[27m2[27m34[27m [27m-[27mn[27ma[27mm[27me[27m [27ma[27mb[27mc[27m [27m-[27ml[27mo[27mw[27m [27m0[27m [27m-[27mm[27mi[27md[27m [27m1[27m0[27m [27m-[27mh[27mi[27mg[27mh[27m [27m1[27m0[27m0[27m [27m-[27mh[27mo[27ms[27mt[27m [27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[27m [27m-[27mp[27mo[27mr[27mt[27m [27m5[27m0[27m0[27m5[27m1[?2004l
+2023/04/04 23:47:18 Partial: 4
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004hggo run client.go - [7mread -id 1234[7m [7m-host localhost -port 50051[27m[K[A[39C[27mr[27me[27ma[27md[27m [27m-[27mi[27md[27m [27m1[27m2[27m3[27m4 [27m-[27mh[27mo[27ms[27mt[27m [27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[27m [27m-[27mp[27mo[27mr[27mt[27m [27m5[27m0[27m0[27m5[27m1[?2004l
+2023/04/04 23:47:41 Final: 70
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004hggo run client.go -drop id [1C  [1C - i d [1C [7m1[7m234[7m [7m-host localhost -port 50051[27m[K[A[48C[27m1[27m2[27m3[27m4 [27m-[27mh[27mo[27ms[27mt[27m [27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[27m [27m-[27mp[27mo[27mr[27mt[27m [27m5[27m0[27m0[27m5[27m1[1C[?2004l
+2023/04/04 23:48:21 true
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Tue Apr  4 23:48:24 2023

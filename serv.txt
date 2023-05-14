@@ -1,0 +1,36 @@
+Script started on Tue Apr  4 23:45:52 2023
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004hggo run server.go[?2004l
+2023/04/04 23:46:00 Server started on 50051
+Token Id:  1234
+Name:  
+Low:  0
+Mid:  0
+High:  0
+Partial:  0
+Final:  0
+1234
+Token Id:  1234
+Name:  abc
+Low:  0
+Mid:  10
+High:  100
+Partial:  4
+Final:  0
+1234
+Token Id:  1234
+Name:  abc
+Low:  0
+Mid:  10
+High:  100
+Partial:  4
+Final:  70
+1234
+^Csignal: interrupt
+[1m[7m%[27m[1m[0m                                                                                ]7;file://Aryas-MacBook-Air.local/Users/aryahonraopatil/go/src/token_manage[0m[27m[24m[Jaryahonraopatil@Aryas-MacBook-Air token_manage % [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Tue Apr  4 23:49:39 2023
