@@ -59,5 +59,5 @@ go.sum
 ## Commands to run the code
 client/clientcode  -create -id 1500  
 client/clientcode  -write -id 1500 -name token1 -low 0 -mid 10 -high 100  
-clientcode/clientcode  -read -id 1500  
-clientcode/clientcode  -drop -id 1500  
+client/clientcode  -read -id 1500  
+client/clientcode  -drop -id 1500  
