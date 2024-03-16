@@ -37,34 +37,27 @@ go.mod and go.sum are files that are automatically generated during the compilat
 ## Project Folder Structure
 The structure of the project folder is as follows: 
 
-A] clientcode
--clientcode.exe
--clientcode.go
+A] clientcode  
+clientcode.exe  
+clientcode.go
 
-B] servercode
--servercode.exe
--servercode.go
+B] servercode  
+servercode.exe  
+servercode.go
 
-C] tokenmgmt
--tokenmgmt_grpc.pb.go
--tokenmgmt.pb.gp
--tokenmgmt.proto
+C] tokenmgmt  
+tokenmgmt_grpc.pb.go  
+tokenmgmt.pb.gp  
+tokenmgmt.proto
 
-D] logs
--log_11236.log
--log_23654.log
--log_50001.log
--log_52003.log
--log_55000.log
--log_60000.log
--log_65000.log
+D] logs  
 
--yaml_final.yml
--go.mod
--go.sum
+yaml_final.yml  
+go.mod  
+go.sum
 
 ## Commands to run the code
-client/clientcode  -create -id 1500
-client/clientcode  -write -id 1500 -name token1 -low 0 -mid 10 -high 100
-clientcode/clientcode  -read -id 1500
-clientcode/clientcode  -drop -id 1500
+client/clientcode  -create -id 1500  
+client/clientcode  -write -id 1500 -name token1 -low 0 -mid 10 -high 100  
+clientcode/clientcode  -read -id 1500  
+clientcode/clientcode  -drop -id 1500  
