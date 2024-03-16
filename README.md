@@ -16,7 +16,7 @@ In the  Read RPC call, the client program reads the yaml_final.yml file and fetc
 Similarly to the Create and Write RPC calls, in the Drop RPC call, the client program retrieves the token's details from the yaml_final.yml file and acquires the writer. Next, the writer receives a Drop RPC call that must be carried out. If the Drop RPC call occurred after the most recent operation on the token, the token will be removed from the server.
 Next, the writer sends Drop RPC requests to each reader to guarantee the removal of the duplicated token. This is achieved by executing the Drop RPC calls as goroutines, making sure uninterrupted deletion and minimizing client wait time.
 
-The requirement of emulating fail-silent behaviour is implemented by hardcoding values to check for the conditions for a specific token in a specific server. In this project, the fail-silent behaviour is emulated for the token with the ID: 1020 in the server running on the port: 65000. The server running on this port will fail to respond to queries on the token 1020 after a time duration of 10 seconds since the token's creation.
+The requirement of emulating fail-silent behaviour is implemented by hardcoding values to check for the conditions for a specific token in a specific server. In this project, the fail-silent behaviour is emulated for the token with the ID: 1000 in the server running on the port: 5000. The server running on this port will fail to respond to queries on the token 1000 after a time duration of 10 seconds since the token's creation.
 
 ## File descriptions
 
@@ -25,11 +25,11 @@ The file tokenmgmt/tokenmgmt.proto contains the definition of the messages and l
 
 protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative .\tokenmgmt\tokenmgmt.proto
 
-### 2. yaml_final.yml
+### 2. yaml.yml
 This file contains the replication schemes of all the tokens that are present for this project. This file is accessible by both the client and the server programs.
 
 ### 3. logs files
-This folder contains the logs of each server. Each file corresponds to the log of a server. The file log_65000.log contains the results of fail-silent emulations. 
+This folder contains the logs of each server. Each file corresponds to the log of a server. The file log_5000.log contains the results of fail-silent emulations. 
 
 ### Other files
 go.mod and go.sum are files that are automatically generated during the compilation of the project. Similar to the proto file, do not tamper with this file. 
