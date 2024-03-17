@@ -41,7 +41,7 @@ The structure of the project folder is as follows:
 
 -server.go  
 
--proto  
+-proto    
   -tokens_grpc.pb.go  
   -tokens.pb.gp  
   -tokens.proto  
