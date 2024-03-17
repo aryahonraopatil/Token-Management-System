@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package proto;
 
-option go_package="tokenmngr/proto";
+option go_package="token_manage/proto";
 
 message Token {
   string id = 1;
@@ -15,29 +15,29 @@ message Token {
 }
 
 service TokenManager {
-  rpc Create(CreateRequest) returns (CreateResponse) {}
-  rpc Drop(DropRequest) returns (DropResponse) {}
-  rpc Write(WriteRequest) returns (WriteResponse) {}
-  rpc Read(ReadRequest) returns (ReadResponse) {}
+  rpc CreateToken(CreateTokenRequest) returns (CreateTokenResponse) {}
+  rpc DropToken(DropTokenRequest) returns (DropTokenResponse) {}
+  rpc WriteToken(WriteTokenRequest) returns (WriteTokenResponse) {}
+  rpc ReadToken(ReadTokenRequest) returns (ReadTokenResponse) {}
 }
 
-message CreateRequest {
+message CreateTokenRequest {
   string id = 1;
 }
 
-message CreateResponse {
+message CreateTokenResponse {
   bool success = 1;
 }
 
-message DropRequest {
+message DropTokenRequest {
   string id = 1;
 }
 
-message DropResponse {
+message DropTokenResponse {
   bool success = 1;
 }
 
-message WriteRequest {
+message WriteTokenRequest {
   string id = 1;
   string name = 2;
   uint64 low = 3;
@@ -45,14 +45,14 @@ message WriteRequest {
   uint64 high = 5;
 }
 
-message WriteResponse {
+message WriteTokenResponse {
   uint64 partial = 1;
 }
 
-message ReadRequest {
+message ReadTokenRequest {
   string id = 1;
 }
 
-message ReadResponse {
+message ReadTokenResponse {
   uint64 final = 1;
 }
