@@ -11,7 +11,7 @@ When the client program comes across a Create flag for a token, it reads the yam
 
 The Write RPC call operates based on similar concepts as the Create RPC method. When the Write flag is encountered, the client program will read the yaml_final.yml file and retrieve the data of the token that matches. After retrieving the data, the token writer receives the Write RPC call. After receiving the Write RPC call, the writer compares the timestamp on the token to the timestamp of the incoming call. The write operation is executed if the incoming call has a newer timestamp. The state information of the token is revised, including the updated timestamp. Now, it is responsible for updating the token's state information by sending the relevant readers the Write RPC call to inform them. Similar to Create, the Write RPC call has the flexibility to identify the origin of the call, distinguishing between the writer and the reader within the same function.
 
-In the  Read RPC call, the client program reads the yaml_final.yml file and fetches the corresponding token's data. It gets the list of readers and chooses a reader randomly to send the Read RPC call to. Once the corresponding reader receives the RPC call, it checks whether the token exists or not. After this check is passed, the Read-Impose Write-Majority comes into play, where all the nodes with the token are contacted by dispatching RPC calls as goroutines. Here the RIWMTest RPC Call is utilized. When a server receives this call, it checks for the token for which the information is requested, and sends back the timestamp and the final value. The reader that invokes this RPC call then begins to collect the results of the goroutines. Through the process of collection, the timestamps are compared and the most recent value is calculated. However, the read waits only until a majority of the calls are executed and returned, and returns the updated information to the client while also writing back to the other nodes.
+In the  Read RPC call, the client program reads the yaml_final.yml file and fetches the corresponding token's data. It gets the list of readers and chooses a reader randomly to send the Read RPC call to. Once the corresponding reader receives the RPC call, it checks whether the token exists or not. After this check is passed, the Read-Impose Write-Majority comes into play, where all the nodes with the token are contacted by dispatching RPC calls as goroutines. Here the RIWMTest RPC Call is utilized. Upon receiving the call, the server verifies the token, retrieves the requested information, and returns the timestamp and final value. The reader initiating this RPC call starts gathering the results from the goroutines. During the collection process, the timestamps are compared to determine the most recent value. Nevertheless, the reader simply waits for most of the calls to be completed and returned before providing the client with the updated information and writing back to the remaining nodes.
 
 Similarly to the Create and Write RPC calls, in the Drop RPC call, the client program retrieves the token's details from the yaml_final.yml file and acquires the writer. Next, the writer receives a Drop RPC call that must be carried out. If the Drop RPC call occurred after the most recent operation on the token, the token will be removed from the server.
 Next, the writer sends Drop RPC requests to each reader to guarantee the removal of the duplicated token. This is achieved by executing the Drop RPC calls as goroutines, making sure uninterrupted deletion and minimizing client wait time.
@@ -37,27 +37,23 @@ go.mod and go.sum are files that are automatically generated during the compilat
 ## Project Folder Structure
 The structure of the project folder is as follows: 
 
-A] client    
-clientcode.exe  
-clientcode.go
+-client.go  
 
-B] server  
-servercode.exe  
-servercode.go
+-server.go  
 
-C] tokenmgmt  
-tokenmgmt_grpc.pb.go  
-tokenmgmt.pb.gp  
-tokenmgmt.proto
+-proto
+  -tokens_grpc.pb.go  
+  -tokens.pb.gp  
+  -tokens.proto  
 
-D] logs  
+-logs  
 
-yaml.yml  
-go.mod  
-go.sum
+-yaml.yml  
+-go.mod  
+-go.sum
 
 ## Commands to run the code
-client/clientcode  -create -id 1500  
-client/clientcode  -write -id 1500 -name token1 -low 0 -mid 10 -high 100  
-client/clientcode  -read -id 1500  
-client/clientcode  -drop -id 1500  
+client  -create -id 1500  
+client  -write -id 1500 -name token1 -low 0 -mid 10 -high 100  
+client  -read -id 1500  
+client  -drop -id 1500  
